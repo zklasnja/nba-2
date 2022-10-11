@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\CommentsController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\NewsConstroller;
 use App\Http\Controllers\PlayersController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\TeamsController;
@@ -51,3 +52,6 @@ Route::post('/email/verification-notification', function (Request $request) {
  
     return back()->with('message', 'Verification link sent!');
 })->middleware(['auth', 'throttle:6,1'])->name('verification.send');
+
+Route::get('/news', [NewsConstroller::class, 'index'])->name('news');
+Route::get('/news/{id}', [NewsConstroller::class, 'show']);
