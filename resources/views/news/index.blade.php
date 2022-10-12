@@ -4,14 +4,16 @@
 
 @section('content')
     <ul>
-        @foreach ($users as $user)
+        @foreach ($news as $singleNews)
+            {{-- {{ dd($singleNews->teams) }} --}}
+
             <li>
-                <a href="/news/{{ $user->id }}">
-                    {{ $user->title }}
+                <a href="/news/{{ $singleNews->id }}">
+                    {{ $singleNews->title }}
                 </a>
-                <p>Author:{{ $user->name }}</p>
-                <p>Email:{{ $user->email }}</p>
-                <p>From:{{ $user->created_at }}</p>
+                <p>Author:{{ $singleNews->user->name }}</p>
+                <p>Email:{{ $singleNews->user->email }}</p>
+                <p>From:{{ $singleNews->created_at }}</p>
             </li>
         @endforeach
         <hr>

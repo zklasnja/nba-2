@@ -54,4 +54,5 @@ Route::post('/email/verification-notification', function (Request $request) {
 })->middleware(['auth', 'throttle:6,1'])->name('verification.send');
 
 Route::get('/news', [NewsConstroller::class, 'index'])->name('news');
+Route::get('/news/teams/{team}', [NewsConstroller::class, 'teamNews']);
 Route::get('/news/{id}', [NewsConstroller::class, 'show']);
