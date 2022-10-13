@@ -60,7 +60,7 @@ class NewsConstroller extends Controller
             'user_id' => auth()->id(),
         ]);
 
-        $news->teams()->attach($request['teams']);
+        $news->teams()->attach($request->teams);
 
         session()->flash('message', 'Thank you for publishing article on www.nba.com');
 
