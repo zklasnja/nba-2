@@ -15,7 +15,8 @@
     <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/blog/">
 
     <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
     <!-- Custom styles for this template -->
     <link href="https://fonts.googleapis.com/css?family=Playfair+Display:700,900" rel="stylesheet">
@@ -26,6 +27,12 @@
 
     <div class="container">
         @include('partials.header')
+
+        @if (session('message'))
+            <div class="aler alert-success">
+                {{ session('message') }}
+            </div>
+        @endif
 
         <div class="nav-scroller py-1 mb-2">
             <nav class="nav d-flex justify-content-between">
@@ -44,7 +51,7 @@
             </nav>
         </div>
 
-        
+
     </div>
 
     <main role="main" class="container">
